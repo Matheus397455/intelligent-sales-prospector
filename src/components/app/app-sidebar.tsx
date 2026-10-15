@@ -30,12 +30,14 @@ export function AppSidebar() {
                 {section.items.map((item) => {
                   const active = pathname === item.url || pathname.startsWith(item.url + "/");
                   return (
-                    <SidebarMenuButton key={item.url} asChild isActive={active} tooltip={item.title} size="sm">
+                    <SidebarMenuItem key={item.url}>
+                    <SidebarMenuButton asChild isActive={active} tooltip={item.title} size="sm">
                       <Link to={item.url}>
                         <item.icon />
                         <span>{item.title}</span>
                       </Link>
                     </SidebarMenuButton>
+                    </SidebarMenuItem>
                   );
                 })}
               </SidebarMenu>
@@ -46,5 +48,3 @@ export function AppSidebar() {
     </Sidebar>
   );
 }
-// SidebarMenuItem kept available for future nested menus
-void SidebarMenuItem;

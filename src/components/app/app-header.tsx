@@ -1,6 +1,6 @@
 import { useRouterState, useNavigate, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { LogOut, Settings, User } from "lucide-react";
+import { LogOut, Settings } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -14,7 +14,7 @@ export function AppHeader() {
   const pathname = useRouterState({ select: (r) => r.location.pathname });
   const navigate = useNavigate();
   const item = findNavItem(pathname);
-  const section = navSections.find((s) => s.items.includes(item!));
+  const section = item ? navSections.find((s) => s.items.includes(item)) : undefined;
 
   const me = useQuery({
     queryKey: ["me"],
@@ -60,4 +60,3 @@ export function AppHeader() {
     </header>
   );
 }
-void User;
