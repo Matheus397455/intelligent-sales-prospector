@@ -35,7 +35,7 @@ export function PageHeader({ title, description, actions }: { title: string; des
   );
 }
 
-export function EmptyState({ icon: Icon = Inbox, title, description, action }: { icon?: LucideIcon; title: string; description?: ReactNode; action?: ReactNode }) {
+export function EmptyState({ icon: Icon = Inbox, title, description, action }: { icon?: LucideIcon | undefined; title: string; description?: ReactNode; action?: ReactNode }) {
   return (
     <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-border bg-card/50 px-6 py-14 text-center">
       <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-muted">

@@ -114,7 +114,7 @@ function ChartEmpty() {
   return <div className="flex h-[220px] items-center justify-center text-center text-sm text-muted-foreground">Ainda não há dados suficientes para este gráfico.</div>;
 }
 
-function Bars({ data }: { data?: { name: string; value: number }[] }) {
+function Bars({ data }: { data?: { name: string; value: number }[] | undefined }) {
   if (!data || data.length === 0) return <ChartEmpty />;
   return (
     <ResponsiveContainer width="100%" height={220}>
@@ -129,7 +129,7 @@ function Bars({ data }: { data?: { name: string; value: number }[] }) {
   );
 }
 
-function Recent({ title, items }: { title: string; items?: { id: string; main: string; sub?: string; badge?: string; date: string | null }[] }) {
+function Recent({ title, items }: { title: string; items?: { id: string; main: string; sub?: string; badge?: string; date: string | null }[] | undefined }) {
   return (
     <SectionCard title={title}>
       {!items ? <div className="h-16 animate-pulse rounded bg-muted" /> : items.length === 0 ? (

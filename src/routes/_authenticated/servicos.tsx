@@ -13,7 +13,7 @@ function Page() {
       title="Serviços e preços"
       description="Catálogo dos serviços que você oferece."
       table="offers"
-      columns={[{key:"name",label:"Serviço"},{key:"reference_price",label:"Preço de referência",type:"money"},{key:"estimated_delivery_days",label:"Prazo (dias)"},{key:"active",label:"Ativo",render:(r)=>r.active ? "Sim" : "Não"}]}
+      columns={[{key:"name",label:"Serviço"},{key:"reference_price",label:"Preço de referência",type:"money"},{key:"estimated_delivery_days",label:"Prazo (dias)"},{key:"active",label:"Ativo",render:(r)=>r["active"] ? "Sim" : "Não"}]}
       emptyIcon={Tags}
       emptyTitle="Nenhum serviço cadastrado"
       emptyDescription="Cadastre serviços como sites institucionais, landing pages e cardápios digitais."

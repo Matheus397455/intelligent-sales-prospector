@@ -15,7 +15,7 @@ function Page() {
       table="outreach_drafts"
       select={"id, channel, content, created_at, companies(name)"}
       filter={{column:"status",op:"eq",value:"pending_approval"}}
-      columns={[{key:"company",label:"Empresa",render:(r)=>(r.companies as {name:string}|null)?.name ?? "—"},{key:"channel",label:"Canal"},{key:"content",label:"Prévia",render:(r)=>String(r.content).slice(0,80)},{key:"created_at",label:"Criada em",type:"date"}]}
+      columns={[{key:"company",label:"Empresa",render:(r)=>(r["companies"] as {name:string}|null)?.name ?? "—"},{key:"channel",label:"Canal"},{key:"content",label:"Prévia",render:(r)=>String(r["content"]).slice(0,80)},{key:"created_at",label:"Criada em",type:"date"}]}
       emptyIcon={ShieldCheck}
       emptyTitle="Nada aguardando aprovação"
       emptyDescription="Quando uma abordagem estiver pronta, ela aparecerá aqui para você revisar."

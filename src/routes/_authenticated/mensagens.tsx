@@ -14,7 +14,7 @@ function Page() {
       description="Abordagens geradas, aprovadas e enviadas."
       table="outreach_drafts"
       select={"id, channel, status, tone, created_at, companies(name)"}
-      columns={[{key:"company",label:"Empresa",render:(r)=>(r.companies as {name:string}|null)?.name ?? "—"},{key:"channel",label:"Canal"},{key:"tone",label:"Tom"},{key:"status",label:"Status",type:"status"},{key:"created_at",label:"Criada em",type:"date"}]}
+      columns={[{key:"company",label:"Empresa",render:(r)=>(r["companies"] as {name:string}|null)?.name ?? "—"},{key:"channel",label:"Canal"},{key:"tone",label:"Tom"},{key:"status",label:"Status",type:"status"},{key:"created_at",label:"Criada em",type:"date"}]}
       emptyIcon={MessageSquareText}
       emptyTitle="Nenhuma mensagem ainda"
       emptyDescription="Mensagens geradas pela IA aparecerão aqui para revisão."

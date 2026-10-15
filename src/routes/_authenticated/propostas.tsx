@@ -14,7 +14,7 @@ function Page() {
       description="Propostas enviadas e valores negociados."
       table="proposals"
       select={"id, status, total, sent_at, created_at, companies(name)"}
-      columns={[{key:"company",label:"Empresa",render:(r)=>(r.companies as {name:string}|null)?.name ?? "—"},{key:"status",label:"Status",type:"status"},{key:"total",label:"Total",type:"money"},{key:"sent_at",label:"Enviada",type:"date"}]}
+      columns={[{key:"company",label:"Empresa",render:(r)=>(r["companies"] as {name:string}|null)?.name ?? "—"},{key:"status",label:"Status",type:"status"},{key:"total",label:"Total",type:"money"},{key:"sent_at",label:"Enviada",type:"date"}]}
       emptyIcon={FileSignature}
       emptyTitle="Nenhuma proposta"
       emptyDescription="Propostas e vendas registradas aparecerão aqui."

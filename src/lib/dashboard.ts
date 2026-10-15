@@ -7,8 +7,8 @@ function since(period: Period) {
   return new Date(Date.now() - Number(period) * 86400000).toISOString();
 }
 
-async function count(table: Parameters<typeof supabase.from>[0], apply?: (q: any) => any) {
-  let q: any = supabase.from(table).select("id", { count: "exact", head: true });
+async function count(table: any, apply?: (q: any) => any) {
+  let q: any = (supabase as any).from(table).select("id", { count: "exact", head: true });
   if (apply) q = apply(q);
   const { count: c, error } = await q;
   if (error) throw error;

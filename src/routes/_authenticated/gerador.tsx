@@ -14,7 +14,7 @@ function Page() {
       description="Mensagens personalizadas com base nas evidências de cada empresa."
       table="outreach_drafts"
       select={"id, channel, objective, status, created_at, companies(name)"}
-      columns={[{key:"company",label:"Empresa",render:(r)=>(r.companies as {name:string}|null)?.name ?? "—"},{key:"objective",label:"Objetivo"},{key:"status",label:"Status",type:"status"},{key:"created_at",label:"Criada em",type:"date"}]}
+      columns={[{key:"company",label:"Empresa",render:(r)=>(r["companies"] as {name:string}|null)?.name ?? "—"},{key:"objective",label:"Objetivo"},{key:"status",label:"Status",type:"status"},{key:"created_at",label:"Criada em",type:"date"}]}
       emptyIcon={Sparkles}
       emptyTitle="Nenhuma abordagem gerada"
       emptyDescription="O gerador usa a auditoria e a pontuação da empresa para escrever a mensagem."
